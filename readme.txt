@@ -1,1 +1,7 @@
-to use the right node version and get the application running we first have to do nvm use v20.7.0 and then npm run dev.
+to use the right node version and get the application running we first have to do
+
+ nvm use v20.7.0 
+ 
+ and then 
+ 
+ npm run dev
