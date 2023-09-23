@@ -1,15 +1,12 @@
-import InsightRoll from "@/src/components/About/InsightRoll";
-
+import InsightRoll from '@/src/components/About/InsightRoll';
 
 const insights = [
-    "20+ Projects Completed",
-    "3+ Years of Freelancing",
-    "99% Client Satisfaction",
-    "20K+ Subscribers",
-    "Authored In-Depth Course on Educative",
-    "Contributed as a Technical Course Reviewer 📝",
-    "Recipient of the Hackernoon Noonies Award 🏆",
-  ];
+  'Passionate about Web Design & SEO',
+  'Dedicated to advancing Generative AI',
+  'Committed to sharing Financial Insights',
+  'Coding, Side Hustles, and Affiliate Marketing Blogger',
+  'Exploring Topics that Pique My Interest 🌐',
+];
 
 export default function AboutLayout({ children }) {
   return (
