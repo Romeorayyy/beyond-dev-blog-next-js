@@ -1,9 +1,9 @@
-"use client";
-import React from "react";
-import { useForm } from "react-hook-form";
-import { DribbbleIcon, GithubIcon, LinkedinIcon, TwitterIcon } from "../Icons";
-import Link from "next/link";
-import siteMetadata from "@/src/utils/siteMetaData";
+'use client';
+import React from 'react';
+import { useForm } from 'react-hook-form';
+import { DribbbleIcon, GithubIcon, LinkedinIcon, TwitterIcon } from '../Icons';
+import Link from 'next/link';
+import siteMetadata from '@/src/utils/siteMetaData';
 
 const Footer = () => {
   const {
@@ -31,7 +31,7 @@ const Footer = () => {
         <input
           type="email"
           placeholder="Enter your email"
-          {...register("email", { required: true, maxLength: 80 })}
+          {...register('email', { required: true, maxLength: 80 })}
           className="w-full bg-transparent pl-2 sm:pl-0 text-dark focus:border-dark focus:ring-0 border-0 border-b mr-2 pb-1"
         />
 
@@ -76,21 +76,25 @@ const Footer = () => {
       </div>
 
       <div className="w-full  mt-16 md:mt-24 relative font-medium border-t border-solid border-light py-6 px-8 flex  flex-col md:flex-row items-center justify-between">
-        <span className="text-center">
+        {/* <span className="text-center">
           &copy;2023 CodeBucks. All rights reserved.
-        </span>
+        </span> */}
         <Link
           href="/sitemap.xml"
           className="text-center underline my-4 md:my-0"
         >
           sitemap.xml
         </Link>
-        <div className="text-center">
-          Made with &hearts; by{" "}
-          <a href="https://devdreaming.com" className="underline" target="_blank">
+        {/* <div className="text-center">
+          Made with &hearts; by{' '}
+          <a
+            href="https://devdreaming.com"
+            className="underline"
+            target="_blank"
+          >
             CodeBucks
           </a>
-        </div>
+        </div> */}
       </div>
     </footer>
   );
