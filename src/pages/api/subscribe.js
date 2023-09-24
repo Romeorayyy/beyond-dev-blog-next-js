@@ -1,9 +1,4 @@
 import { google } from 'googleapis';
-import fs from 'fs/promises';
-
-const SCOPES = ['https://www.googleapis.com/auth/spreadsheets'];
-const SAMPLE_SPREADSHEET_ID = '1PO30tyDNsLd-zlfy87lMZGefW2vfDi4wb9URAEwVOJE';
-const SAMPLE_RANGE_NAME = 'sheet1';
 
 const CREDENTIALS = {
   installed: {
@@ -32,7 +27,8 @@ export default async function handler(req, res) {
       await appendEmail(auth, email);
       res.status(200).send({ message: 'Email appended successfully!' });
     } catch (error) {
-      res.status(500).send({ message: 'An error occurred!' });
+      console.error('Error while appending email:', error.message);
+      res.status(500).send({ message: `An error occurred: ${error.message}` });
     }
   } else {
     res.status(405).send({ message: 'Only POST requests are allowed!' });
@@ -47,8 +43,8 @@ async function appendEmail(auth, email) {
   };
 
   return sheets.spreadsheets.values.append({
-    spreadsheetId: SAMPLE_SPREADSHEET_ID,
-    range: SAMPLE_RANGE_NAME,
+    spreadsheetId: process.env.GOOGLE_SPREADSHEET_ID,
+    range: process.env.GOOGLE_RANGE_NAME,
     valueInputOption: 'RAW',
     resource: resource,
   });

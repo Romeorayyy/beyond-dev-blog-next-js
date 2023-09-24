@@ -22,11 +22,15 @@ const Footer = () => {
       });
 
       const result = await response.json();
-      console.log(result.message); // Handle the success message (perhaps show a success alert to the user)
+      if (response.ok) {
+        alert('Thank You for subscribing!');
+      } else {
+        console.error('Server responded with an error:', result.message);
+        alert('There was an error. Please try again later.');
+      }
     } catch (error) {
-      console.error('Error appending email:', error);
-      // Handle the error (perhaps show an error message to the user)
-      console.log(errors);
+      console.error('Error appending email:', error.message);
+      alert('An unexpected error occurred. Please try again later.');
     }
   };
 
