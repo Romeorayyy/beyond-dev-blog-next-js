@@ -11,8 +11,24 @@ const Footer = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
-  console.log(errors);
+  const onSubmit = async (data) => {
+    try {
+      const response = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+      console.log(result.message); // Handle the success message (perhaps show a success alert to the user)
+    } catch (error) {
+      console.error('Error appending email:', error);
+      // Handle the error (perhaps show an error message to the user)
+      console.log(errors);
+    }
+  };
 
   return (
     <footer className="mt-16 rounded-2xl bg-dark dark:bg-accentDark/90 m-2 sm:m-10 flex flex-col items-center text-light dark:text-dark">
