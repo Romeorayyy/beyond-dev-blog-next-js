@@ -10,7 +10,7 @@ const Footer = () => {
     register,
     handleSubmit,
     formState: { errors },
-    reset, // <-- Add this line to get the reset method
+    reset,
   } = useForm();
   const onSubmit = async (data) => {
     try {
