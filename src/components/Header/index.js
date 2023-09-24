@@ -104,21 +104,27 @@ const Header = () => {
       >
         <Link
           href="/"
-          className="mr-2 hover:scale-125 transition-all ease duration-200"
+          className="mr-4 hover:scale-125 transition-all ease duration-200"
         >
           Home
         </Link>
         <Link
           href="/about"
-          className="mx-2 hover:scale-125 transition-all ease duration-200"
+          className="mx-4 hover:scale-125 transition-all ease duration-200"
         >
           About
         </Link>
         <Link
           href="/contact"
-          className="mx-2 hover:scale-125 transition-all ease duration-200"
+          className="mx-4 hover:scale-125 transition-all ease duration-200"
         >
           Contact
+        </Link>
+        <Link
+          href="/categories/all"
+          className="mx-4 hover:scale-125 transition-all ease duration-200"
+        >
+          Categories
         </Link>
         {/* <button
           onClick={() => setMode(mode === 'light' ? 'dark' : 'light')}
