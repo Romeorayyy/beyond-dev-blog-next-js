@@ -120,7 +120,7 @@ const Header = () => {
         >
           Contact
         </Link>
-        <button
+        {/* <button
           onClick={() => setMode(mode === 'light' ? 'dark' : 'light')}
           className={cx(
             'w-6 h-6 ease ml-2 flex items-center justify-center rounded-full p-1',
@@ -133,7 +133,7 @@ const Header = () => {
           ) : (
             <SunIcon className={'fill-dark'} />
           )}
-        </button>
+        </button> */}
       </nav>
       <div className=" hidden sm:flex items-center">
         <a
