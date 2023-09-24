@@ -10,6 +10,7 @@ const Footer = () => {
     register,
     handleSubmit,
     formState: { errors },
+    reset, // <-- Add this line to get the reset method
   } = useForm();
   const onSubmit = async (data) => {
     try {
@@ -24,6 +25,7 @@ const Footer = () => {
       const result = await response.json();
       if (response.ok) {
         alert('Thank You for subscribing!');
+        reset(); // <-- Reset the form fields after successful submission
       } else {
         console.error('Server responded with an error:', result.message);
         alert('There was an error. Please try again later.');
