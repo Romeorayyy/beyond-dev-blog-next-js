@@ -1,4 +1,3 @@
-// pages/api/sendEmail.js
 import nodemailer from 'nodemailer';
 
 export default async function handler(req, res) {
@@ -6,8 +5,18 @@ export default async function handler(req, res) {
     return res.status(405).end();
   }
 
+  // Destructure the data from the request body
   const { name, subject, email, inquiryDetails } = req.body;
 
+  // Check if environment variables are set correctly
+  if (!process.env.EMAIL || !process.env.PASSWORD) {
+    console.error('EMAIL or PASSWORD environment variable is not set.');
+    return res
+      .status(500)
+      .json({ success: false, message: 'Server configuration error.' });
+  }
+
+  // Create the transporter for nodemailer
   const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
@@ -16,6 +25,7 @@ export default async function handler(req, res) {
     },
   });
 
+  // Set up the email options
   const mailOptions = {
     from: email,
     to: process.env.EMAIL,
@@ -23,7 +33,13 @@ export default async function handler(req, res) {
     text: inquiryDetails,
   };
 
-  const info = await transporter.sendMail(mailOptions);
-
-  return res.status(200).json({ success: true });
+  // Try sending the email and respond accordingly
+  try {
+    const info = await transporter.sendMail(mailOptions);
+    console.log('Email sent successfully:', info);
+    return res.status(200).json({ success: true });
+  } catch (error) {
+    console.error('Error sending email:', error);
+    return res.status(500).json({ success: false, message: error.message });
+  }
 }

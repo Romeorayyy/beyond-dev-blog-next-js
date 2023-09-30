@@ -1,13 +1,15 @@
 'use client'; // The 'use client' you had is not valid, assuming you meant 'use strict'
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 
 export default function ContactForm() {
   const {
     register,
     handleSubmit,
+    reset, // <-- Add this for resetting the form
     formState: { errors },
   } = useForm();
+  const [feedback, setFeedback] = useState(null);
 
   const onSubmit = async (data) => {
     try {
@@ -22,19 +24,15 @@ export default function ContactForm() {
       const result = await response.json();
 
       if (result.success) {
-        console.log('Email sent successfully!');
-        // You can also show a success message or do other post-send actions here.
+        setFeedback('Email sent successfully!');
+        reset(); // <-- This will reset the form after a successful email send
       } else {
-        console.error('Error sending email');
-        // Handle the error accordingly.
+        setFeedback('Error sending email. Please try again later.');
       }
     } catch (error) {
-      console.error('There was an error sending the email', error);
-      // Handle the error accordingly.
+      setFeedback('An unexpected error occurred. Please try again later.');
     }
   };
-
-  console.log(errors);
 
   return (
     <form
@@ -67,7 +65,7 @@ export default function ContactForm() {
       />
       Here's more about my inquiry: <br />
       <textarea
-        {...register('inquiryDetails', {})} // corrected this line
+        {...register('inquiryDetails', { required: true })}
         placeholder="I'd like to know more about..."
         rows={3}
         className="w-full outline-none border-0 p-0 mx-0 focus:ring-0 placeholder:text-lg border-b border-gray 
@@ -76,8 +74,10 @@ export default function ContactForm() {
       <input
         type="submit"
         value="send message"
-        className="mt-8 font-medium inline-block capitalize text-lg sm:text-xl py-2 sm:py-3 px-6 sm:px-8 border-2 border-solid border-dark dark:border-light rounded cursor-pointer"
+        className="mt-8 font-medium inline-block capitalize text-lg sm:text-xl py-2 sm:py-3 px-6 sm:px-8 border-2 border-solid border-dark dark:border-light rounded cursor-pointer hover:scale-125 transition-all ease duration-200"
       />
+      {/* Display feedback to user */}
+      {feedback && <div className="mt-4">{feedback}</div>}
     </form>
   );
 }
