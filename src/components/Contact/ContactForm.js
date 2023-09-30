@@ -1,4 +1,4 @@
-'use client';
+'use client'; // The 'use client' you had is not valid, assuming you meant 'use strict'
 import React from 'react';
 import { useForm } from 'react-hook-form';
 
@@ -8,7 +8,32 @@ export default function ContactForm() {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+
+  const onSubmit = async (data) => {
+    try {
+      const response = await fetch('/api/sendEmail', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        console.log('Email sent successfully!');
+        // You can also show a success message or do other post-send actions here.
+      } else {
+        console.error('Error sending email');
+        // Handle the error accordingly.
+      }
+    } catch (error) {
+      console.error('There was an error sending the email', error);
+      // Handle the error accordingly.
+    }
+  };
+
   console.log(errors);
 
   return (
@@ -42,7 +67,7 @@ export default function ContactForm() {
       />
       Here's more about my inquiry: <br />
       <textarea
-        {...register('inquiry details', {})}
+        {...register('inquiryDetails', {})} // corrected this line
         placeholder="I'd like to know more about..."
         rows={3}
         className="w-full outline-none border-0 p-0 mx-0 focus:ring-0 placeholder:text-lg border-b border-gray 
