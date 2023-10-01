@@ -1,0 +1,87 @@
+{
+  "metadata": {
+    "title": "",
+    "description": "",
+    "image": "",
+    "publishedAt": "",
+    "updatedAt": "",
+    "author": "",
+    "isPublished": "",
+    "tags": []
+  },
+  "introduction": "",
+  "blockquote": "",
+  "sections": [
+    {
+      "h1": "",
+      "content": "",
+      "codeBlock": ""
+    },
+    {
+      "h2": "",
+      "content": [],
+      "image": {
+        "src": "",
+        "width": "",
+        "height": "",
+        "alt": "",
+        "sizes": ""
+      }
+    },
+    {
+      "h2": "",
+      "h3": "",
+      "content": "",
+      "unorderedList": [
+        {
+          "boldText": "",
+          "paragraphs": []
+        }
+      ]
+    },
+    {
+      "h2": "",
+      "content": "",
+      "codeBlock": ""
+    },
+    {
+      "h2": "",
+      "content": "",
+      "orderedList": [
+        {
+          "boldText": "",
+          "content": [],
+          "subUnorderedList": []
+        }
+      ]
+    },
+    {
+      "h2": "",
+      "content": "",
+      "link": "",
+      "table": {
+        "headers": [],
+        "rows": []
+      },
+      "inlineCode": "",
+      "linkWithCode": ""
+    },
+    {
+      "h2": "",
+      "h3": "",
+      "h4": "",
+      "content": ""
+    },
+    {
+      "h2": "",
+      "content": ""
+    }
+  ],
+  "githubFlavoredMarkdown": {
+    "description": "",
+    "autolinkLiterals": {
+      "websites": [],
+      "emails": []
+    }
+  }
+}
