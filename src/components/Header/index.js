@@ -104,25 +104,25 @@ const Header = () => {
       >
         <Link
           href="/"
-          className="mr-4 hover:scale-125 transition-all ease duration-200"
+          className="mr-4 hover:scale-125 transition-all ease duration-200 active:scale-95"
         >
           Home
         </Link>
         <Link
           href="/about"
-          className="mx-4 hover:scale-125 transition-all ease duration-200"
+          className="mx-4 hover:scale-125 transition-all ease duration-200 active:scale-95"
         >
           About
         </Link>
         <Link
           href="/contact"
-          className="mx-4 hover:scale-125 transition-all ease duration-200"
+          className="mx-4 hover:scale-125 transition-all ease duration-200 active:scale-95"
         >
           Contact
         </Link>
         <Link
           href="/categories/all"
-          className="mx-4 hover:scale-125 transition-all ease duration-200"
+          className="mx-4 hover:scale-125 transition-all ease duration-200 active:scale-95"
         >
           Categories
         </Link>
