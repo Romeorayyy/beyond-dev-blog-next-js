@@ -281,7 +281,7 @@ In this section, we'll explore how to run our file analysis script. We'll introd
 
 ```python
 def main():
-    directory = "/Users/randyyono/desktop/Desktop - Randy’s MacBook Pro/git-personal-projects/printify-api"
+    directory = "path/to/your/directory"
     print("Starting analysis...\n")
     total_files, file_data, duplicate_count, file_type_counts, file_type_sizes = analyze_directory(
         directory)
@@ -408,7 +408,7 @@ def write_to_md(total_files, file_data, duplicate_count, file_type_counts, file_
 
 
 def main():
-    directory = "/Users/randyyono/desktop/Desktop - Randy’s MacBook Pro/git-personal-projects/printify-api"
+    directory = "path/to/your/directory"
     print("Starting analysis...\n")
     total_files, file_data, duplicate_count, file_type_counts, file_type_sizes = analyze_directory(
         directory)
