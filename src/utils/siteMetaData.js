@@ -1,9 +1,10 @@
 // please update required information
 const siteMetadata = {
-  title: 'Next.js Blog With Tailwind CSS and Contentlayer',
+  title: 'BeyondDevBlog',
   author: 'Randy',
-  headerTitle: 'Next.js Blog',
-  description: 'A blog created with Next.js, Tailwind.css and contentlayer.',
+  headerTitle: 'BeyondDevBlog',
+  description:
+    'BeyondDevBlog by Randy explores a variety of topics including coding, finance, and affiliate marketing. The blog provides practical advice and insights, reflecting Randy’s journey and learning in technology and side hustles. Connect with a community passionate about continuous learning and diversifying interests.',
   language: 'en-us',
   theme: 'system', // system, dark or light
   siteUrl: 'https://blog-next-js-flame.vercel.app/', // your website URL
