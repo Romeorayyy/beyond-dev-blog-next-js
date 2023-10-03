@@ -12,7 +12,6 @@ tags:
   - Data Analysis
 ---
 
-
 # Exploring Python File Analysis Script
 
 Welcome to a beginner-friendly guide to Python file analysis! In the realm of programming, managing files and data is a fundamental task, and understanding how to analyze and manipulate files is a valuable skill for developers. In this blog post, we'll embark on a journey through a Python script designed for precisely that purpose.
@@ -57,7 +56,7 @@ The `hash_file` function plays a central role in our script by calculating a uni
 
 ```python
 def hash_file(filename):
-    if not os.path.exists(filename):  
+    if not os.path.exists(filename):
         return None
 
     hasher = hashlib.md5()
@@ -139,7 +138,7 @@ We also implement directory exclusion logic to skip certain directories that are
         # Skip .git directory
         if '.git' in dirnames:
             dirnames.remove('.git')
-        
+
         # Skip node_modules directory
         if 'node_modules' in dirnames:
             dirnames.remove('node_modules')
@@ -231,37 +230,44 @@ For each individual file, the report includes:
             f.write(f"- Duplicate Count: {duplicate_count[file_hash]}\n\n")
 ```
 
- > With this structured report, users can easily review and analyze the data collected from the file analysis. Stay with us as we continue to explore the final steps of our file analysis journey.
+> With this structured report, users can easily review and analyze the data collected from the file analysis. Stay with us as we continue to explore the final steps of our file analysis journey.
 
- #### here is an example of what the .md file might look like:
+#### here is an example of what the .md file might look like:
+
 ```md
-  File Analysis
+File Analysis
 
 Total files: 1234
 
- .txt Files
+.txt Files
+
 - Count: 567
 - Total Size: 23.45 MB
 
- .jpg Files
+.jpg Files
+
 - Count: 321
 - Total Size: 45.67 MB
 
- .pdf Files
+.pdf Files
+
 - Count: 346
 - Total Size: 12.34 MB
 
- File: /path/to/analyzed/file1.txt
+File: /path/to/analyzed/file1.txt
+
 - Size: 1.23 MB
 - Last Accessed/Modified: 01-15-2023 08:30
 - Duplicate Count: 2
 
- File: /path/to/analyzed/file2.jpg
+File: /path/to/analyzed/file2.jpg
+
 - Size: 2.34 MB
 - Last Accessed/Modified: 01-14-2023 14:15
 - Duplicate Count: 0
 
- File: /path/to/analyzed/file3.pdf
+File: /path/to/analyzed/file3.pdf
+
 - Size: 3.45 MB
 - Last Accessed/Modified: 01-15-2023 12:45
 - Duplicate Count: 1
@@ -272,6 +278,7 @@ Total files: 1234
 In this section, we'll explore how to run our file analysis script. We'll introduce the main function, which serves as the entry point for initiating the analysis. Additionally, we'll highlight the importance of specifying the directory to be analyzed.
 
 ### main Function
+
 ```python
 def main():
     directory = "/Users/randyyono/desktop/Desktop - Randy’s MacBook Pro/git-personal-projects/printify-api"
@@ -286,12 +293,12 @@ def main():
 
 > The `main` function is the heart of our script. It acts as the entry point for executing the file analysis process. Let's delve into the role it plays and how it initiates the analysis.
 
-
 **User-Specified Directory:** The `main` function begins by specifying the directory that the user intends to analyze. In our example, it's a specific directory path on the system.
 
 **Initiating the Analysis:** After specifying the directory, the `main` function proceeds to start the analysis. It prints a message indicating that the analysis has commenced.
 
 **Running Analysis Functions:** The `main` function then calls two essential functions:
+
 - `analyze_directory`: This function starts the process of traversing the specified directory, collecting data about files, and identifying duplicates.
 - `write_to_md`: Once the analysis is complete, this function generates a detailed Markdown report summarizing the results.
 
@@ -354,7 +361,7 @@ def analyze_directory(directory):
             file_hash = hash_file(full_path)
             if file_hash is None:
                 print(f"Warning: Unable to access {full_path}. Skipping.")
-                continue  
+                continue
 
             file_size_bytes = os.path.getsize(full_path)
             file_size_mb = file_size_bytes / (1024 * 1024)
@@ -419,6 +426,7 @@ if __name__ == "__main__":
 
 - The script starts with essential imports, including modules for file hashing, date-time formatting, and file system operations.
 - It defines four key functions:
+
   - `hash_file`: Calculates the MD5 hash of a file to detect duplicates.
   - `format_size`: Formats file sizes into appropriate units (KB, MB, or GB) with two decimal places.
   - `analyze_directory`: Analyzes files within a specified directory, collecting data on file types, sizes, timestamps, and duplicates.
@@ -431,8 +439,3 @@ By using this script, users can gain valuable insights into their file collectio
 In conclusion, we've explored the complete process of file analysis in Python, from importing essential modules to running the script and generating reports. This versatile tool can be customized to suit various file analysis needs, making it a valuable asset for managing and understanding your files.
 
 We hope this guide has been informative and helpful as you dive into the world of file analysis with Python. Happy analyzing!
-
-
-
-
-
