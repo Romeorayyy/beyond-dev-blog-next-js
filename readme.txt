@@ -41,7 +41,7 @@ const AboutCoverSection = () => {
           sizes="(max-width: 768px) 100vw,(max-width: 1180px) 50vw, 50vw"
         />
       </div>
-
+{}
       <div className="w-full md:w-1/2 flex flex-col text-left items-start justify-center px-5 xs:p-10 pb-10 lg:px-16">
         <h2 className="font-bold capitalize text-4xl xs:text-5xl sxl:text-6xl text-center lg:text-left">
           Beyond Coding, Into Diverse Pursuits!
