@@ -82,6 +82,9 @@ const Header = () => {
         <Link href="/contact" className="mx-2">
           Contact
         </Link>
+        <Link href="/categories/all" className="mx-2">
+          Categories
+        </Link>
         <button
           onClick={() => setMode(mode === 'light' ? 'dark' : 'light')}
           className={cx(
@@ -126,7 +129,7 @@ const Header = () => {
         >
           Categories
         </Link>
-        {/* <button
+        <button
           onClick={() => setMode(mode === 'light' ? 'dark' : 'light')}
           className={cx(
             'w-6 h-6 ease ml-2 flex items-center justify-center rounded-full p-1',
@@ -139,7 +142,7 @@ const Header = () => {
           ) : (
             <SunIcon className={'fill-dark'} />
           )}
-        </button> */}
+        </button>
       </nav>
       <div className=" hidden sm:flex items-center">
         <a
